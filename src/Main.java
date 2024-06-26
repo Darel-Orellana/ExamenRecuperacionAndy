@@ -68,3 +68,42 @@ public class SistemaEducativo {
             default -> throw new IllegalArgumentException("Operación no válida.");
         };
     }
+    private static void administrarAlumnos() {
+        for (int i = 0; i < 5; i++) {
+            entrada.nextLine(); // Limpiar buffer
+            System.out.printf("Nombre del alumno %d: ", i + 1);
+            String nombre = entrada.nextLine();
+            System.out.printf("Calificación del alumno %d: ", i + 1);
+            double calificacion = entrada.nextDouble();
+            alumnos.add(new Alumno(nombre, calificacion));
+        }
+        mostrarAlumnos();
+    }
+
+    private static void mostrarAlumnos() {
+        System.out.println("\nListado de alumnos:");
+        for (Alumno alumno : alumnos) {
+            System.out.printf("Alumno: %s, Calificación: %.2f%n",
+                    alumno.obtenerNombre(), alumno.obtenerCalificacion());
+        }
+    }
+}
+
+class Alumno {
+    private final String nombre;
+    private final double calificacion;
+
+    public Alumno(String nombre, double calificacion) {
+        this.nombre = nombre;
+        this.calificacion = calificacion;
+    }
+
+    public String obtenerNombre() {
+        return nombre;
+    }
+
+    public double obtenerCalificacion() {
+        return calificacion;
+    }
+}
+
