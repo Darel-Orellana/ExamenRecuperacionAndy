@@ -106,4 +106,35 @@ class Alumno {
         return calificacion;
     }
 }
+class Profesor {
+    private String nombre;
+    private int edad;
+    private String especialidad;
+    private double salario;
+
+    public Profesor() {}
+
+    public Profesor(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public Profesor(String nombre, int edad, String especialidad, double salario) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.especialidad = especialidad;
+        this.salario = salario;
+    }
+
+    // Getters y setters
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public int getEdad() { return edad; }
+    public void setEdad(int edad) { this.edad = edad; }
+    public String getEspecialidad() { return especialidad; }
+    public void setEspecialidad(String especialidad) { this.especialidad = especialidad; }
+    public double getSalario() { return salario; }
+    public void setSalario(double salario) { this.salario = salario; }
+}
+
 
